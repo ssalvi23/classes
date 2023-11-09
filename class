@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Web Page</title>
+</head>
+<body>
+  <h1>Counter</h1>
+  <p>Count: <span id="counter">0</span></p>
+  <button id="incrementButton">Increment</button>
+  <button id="decrementButton">Decrement</button>
+
+  <script>
+    // Variables
+    let count = 0;
+
+    // Functions
+    function updateCounter() {
+      document.getElementById("counter").textContent = count;
+    }
+
+    // Events
+    document.getElementById("incrementButton").addEventListener("click", function() {
+      count++;
+      updateCounter();
+    });
+
+    document.getElementById("decrementButton").addEventListener("click", function() {
+      count--;
+      updateCounter();
+    });
+
+    // Conditions
+    if (count === 0) {
+      document.getElementById("decrementButton").disabled = true;
+    }
+
+  </script>
+</body>
+</html>
